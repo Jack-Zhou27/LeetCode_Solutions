@@ -8,6 +8,11 @@
  */
 class Solution {
     public void deleteNode(ListNode node) {
+
+        //In short, we need to first: override the contents of node to be NextNode (effectively deleting it)
+        //second: change the pointer of node to NextNextNode or else we are linking "NextNode" (this is the node we changed to be nextnode) literally to NextNode
+
+        
         node.val = node.next.val; 
         //we override the node that we were given by making the previous node link up to the "NEXT" node in the line
         node.next = node.next.next;
